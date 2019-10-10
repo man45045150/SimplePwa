@@ -48,6 +48,16 @@ addEventListener('notificationclick', event => {
       includeUncontrolled: true
     });
 
+
+    event.notification.close();
+    if (event.action === 'confirm') {
+      // Archive action was clicked
+      console.log('click confirm');
+    } else {
+      // Main body of notification was clicked
+      console.log('click cancel');
+    }
+
     let chatClient;
     let host = 'localhost:3000';
 
@@ -66,9 +76,9 @@ addEventListener('notificationclick', event => {
     // If we didn't find an existing chat window,
     // open a new one:
     if (!chatClient) {
-      chatClient = await clients.openWindow('/chat/');
+      chatClient = await clients.openWindow('/index.html');
     }
-
+  
     // Message the client:
     chatClient.postMessage("New chat messages!");
   }());
