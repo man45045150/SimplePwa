@@ -59,7 +59,8 @@ addEventListener('notificationclick', event => {
     }
 
     let chatClient;
-    let host = 'localhost:3000';
+
+    let host = location.host;
 
     // Let's see if we already have a chat window open:
     for (const client of allClients) {
