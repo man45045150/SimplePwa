@@ -20,6 +20,6 @@
     "http-server": "^0.10.0"
   },
   "dependencies": {
-    "firebase-admin": "^8.6.0"
+    "firebase-admin": "^11.4.1"
   }
 }
